@@ -1,8 +1,8 @@
-# outils
-[![npm](https://img.shields.io/npm/v/outils.svg)](https://www.npmjs.com/package/outils) 
-![Build Status](https://travis-ci.org/proYang/outils.svg?branch=master) 
-[![Coverage](https://coveralls.io/repos/github/proYang/outils/badge.svg?branch=master) 
-![LICENSE MIT](https://img.shields.io/npm/l/outils.svg)](https://www.npmjs.com/package/outils) 
+# tools
+[![npm](https://img.shields.io/npm/v/tools.svg)](https://www.npmjs.com/package/tools) 
+![Build Status](https://travis-ci.org/williamqian/tools.svg?branch=master) 
+[![Coverage](https://coveralls.io/repos/github/williamqian/tools/badge.svg?branch=master) 
+![LICENSE MIT](https://img.shields.io/npm/l/tools.svg)](https://www.npmjs.com/package/tools) 
 
  
 前端业务代码工具库  
@@ -13,36 +13,36 @@
 
 ## 安装使用
 
-1. 直接下载`min`目录下的[outils.min.js](https://github.com/proYang/outils/blob/master/min/outils.min.js)使用，支持UMD通用模块规范  
+1. 直接下载`min`目录下的[tools.min.js](https://github.com/williamqian/tools/blob/master/min/tools.min.js)使用，支持UMD通用模块规范  
 2. 使用npm安装
 
 ### 浏览器:
 ``` html
-  <script src="outils.min.js"></script>
+  <script src="tools.min.js"></script>
   <script>
-      var OS = outils.getOS()
+      var OS = tools.getOS()
   </script>
 ```
 
 ### npm:
 ``` bash
-$ npm install --save-dev outils
+$ npm install --save-dev tools
 ```
 
 webpack、RequireJS、SeaJS等
 
 ``` javascript
 // 完整引入
-const outils = require('outils')
-const OS = outils.getOS()
+const tools = require('tools')
+const OS = tools.getOS()
 ```
 
 **推荐使用方法**  
 
 你真的不需要完整引入所有函数，所以只引入需要使用的方法即可。
 ``` javascript
-// 只引入部分方法('outils/<方法名>')
-const getOS = require('outils/getOS')
+// 只引入部分方法('tools/<方法名>')
+const getOS = require('tools/getOS')
 const OS = getOS()
 ```
 ## API文档
@@ -70,6 +70,7 @@ const OS = getOS()
 #### &emsp;&emsp;[scrollTo][scrollTo]&emsp;&emsp;在${duration}时间内，滚动条平滑滚动到${to}指定位置
 #### &emsp;&emsp;[setScrollTop][setScrollTop]&emsp;&emsp;设置滚动条距顶部的距离
 #### &emsp;&emsp;[windowResize][windowResize]&emsp;&emsp;H5软键盘缩回、弹起回调
+#### &emsp;&emsp;[addWindowLoadFunc][addWindowLoadFunc]&emsp;&emsp;添加window onload后需要执行的函数
 
 ### Function  
 #### &emsp;&emsp;[debounce][debounce]&emsp;&emsp;函数防抖   
@@ -108,48 +109,48 @@ const OS = getOS()
 #### &emsp;&emsp;[parseQueryString][parseQueryString]&emsp;&emsp;url参数转对象
 #### &emsp;&emsp;[stringfyQueryString][stringfyQueryString]&emsp;&emsp;对象序列化
 
-[arrayEqual]:https://github.com/proYang/outils/blob/master/src/array/arrayEqual.js
+[arrayEqual]:https://github.com/williamqian/tools/blob/master/src/array/arrayEqual.js
 
-[addClass]:https://github.com/proYang/outils/blob/master/src/class/addClass.js
-[hasClass]:https://github.com/proYang/outils/blob/master/src/class/hasClass.js
-[removeClass]:https://github.com/proYang/outils/blob/master/src/class/removeClass.js
+[addClass]:https://github.com/williamqian/tools/blob/master/src/class/addClass.js
+[hasClass]:https://github.com/williamqian/tools/blob/master/src/class/hasClass.js
+[removeClass]:https://github.com/williamqian/tools/blob/master/src/class/removeClass.js
 
-[getCookie]:https://github.com/proYang/outils/blob/master/src/cookie/getCookie.js
-[removeCookie]:https://github.com/proYang/outils/blob/master/src/cookie/removeCookie.js
-[setCookie]:https://github.com/proYang/outils/blob/master/src/cookie/setCookie.js
+[getCookie]:https://github.com/williamqian/tools/blob/master/src/cookie/getCookie.js
+[removeCookie]:https://github.com/williamqian/tools/blob/master/src/cookie/removeCookie.js
+[setCookie]:https://github.com/williamqian/tools/blob/master/src/cookie/setCookie.js
 
-[getExplore]:https://github.com/proYang/outils/blob/master/src/device/getExplore.js
-[getOS]:https://github.com/proYang/outils/blob/master/src/device/getOS.js
+[getExplore]:https://github.com/williamqian/tools/blob/master/src/device/getExplore.js
+[getOS]:https://github.com/williamqian/tools/blob/master/src/device/getOS.js
 
-[getScrollTop]:https://github.com/proYang/outils/blob/master/src/dom/getScrollTop.js
-[offset]:https://github.com/proYang/outils/blob/master/src/dom/offset.js
-[scrollTo]:https://github.com/proYang/outils/blob/master/src/dom/scrollTo.js
-[setScrollTop]:https://github.com/proYang/outils/blob/master/src/dom/setScrollTop.js
-[windowResize]:https://github.com/proYang/outils/blob/master/src/dom/windowResize.js
+[getScrollTop]:https://github.com/williamqian/tools/blob/master/src/dom/getScrollTop.js
+[offset]:https://github.com/williamqian/tools/blob/master/src/dom/offset.js
+[scrollTo]:https://github.com/williamqian/tools/blob/master/src/dom/scrollTo.js
+[setScrollTop]:https://github.com/williamqian/tools/blob/master/src/dom/setScrollTop.js
+[windowResize]:https://github.com/williamqian/tools/blob/master/src/dom/windowResize.js
 
-[debounce]:https://github.com/proYang/outils/blob/master/src/function/debounce.js
-[throttle]:https://github.com/proYang/outils/blob/master/src/function/throttle.js
+[debounce]:https://github.com/williamqian/tools/blob/master/src/function/debounce.js
+[throttle]:https://github.com/williamqian/tools/blob/master/src/function/throttle.js
 
-[getKeyName]:https://github.com/proYang/outils/blob/master/src/keycode/getKeyName.js
+[getKeyName]:https://github.com/williamqian/tools/blob/master/src/keycode/getKeyName.js
 
-[deepClone]:https://github.com/proYang/outils/blob/master/src/object/deepClone.js
-[isEmptyObject]:https://github.com/proYang/outils/blob/master/src/object/isEmptyObject.js
+[deepClone]:https://github.com/williamqian/tools/blob/master/src/object/deepClone.js
+[isEmptyObject]:https://github.com/williamqian/tools/blob/master/src/object/isEmptyObject.js
 
-[randomColor]:https://github.com/proYang/outils/blob/master/src/random/randomColor.js
-[randomNum]:https://github.com/proYang/outils/blob/master/src/random/randomNum.js
+[randomColor]:https://github.com/williamqian/tools/blob/master/src/random/randomColor.js
+[randomNum]:https://github.com/williamqian/tools/blob/master/src/random/randomNum.js
 
-[isEmail]:https://github.com/proYang/outils/blob/master/src/regexp/isEmail.js
-[isIdCard]:https://github.com/proYang/outils/blob/master/src/regexp/isIdCard.js
-[isPhoneNum]:https://github.com/proYang/outils/blob/master/src/regexp/isPhoneNum.js
-[isUrl]:https://github.com/proYang/outils/blob/master/src/regexp/isUrl.js
+[isEmail]:https://github.com/williamqian/tools/blob/master/src/regexp/isEmail.js
+[isIdCard]:https://github.com/williamqian/tools/blob/master/src/regexp/isIdCard.js
+[isPhoneNum]:https://github.com/williamqian/tools/blob/master/src/regexp/isPhoneNum.js
+[isUrl]:https://github.com/williamqian/tools/blob/master/src/regexp/isUrl.js
 
-[digitUppercase]:https://github.com/proYang/outils/blob/master/src/string/digitUppercase.js
+[digitUppercase]:https://github.com/williamqian/tools/blob/master/src/string/digitUppercase.js
 
-[isSupportWebP]:https://github.com/proYang/outils/blob/master/src/support/isSupportWebP.js
+[isSupportWebP]:https://github.com/williamqian/tools/blob/master/src/support/isSupportWebP.js
 
-[formatPassTime]:https://github.com/proYang/outils/blob/master/src/time/formatPassTime.js
-[formatRemainTime]:https://github.com/proYang/outils/blob/master/src/time/formatRemainTime.js
-[isSameDay]:https://github.com/proYang/outils/blob/master/src/time/isSameDay.js
+[formatPassTime]:https://github.com/williamqian/tools/blob/master/src/time/formatPassTime.js
+[formatRemainTime]:https://github.com/williamqian/tools/blob/master/src/time/formatRemainTime.js
+[isSameDay]:https://github.com/williamqian/tools/blob/master/src/time/isSameDay.js
 
-[parseQueryString]:https://github.com/proYang/outils/blob/master/src/url/parseQueryString.js
-[stringfyQueryString]:https://github.com/proYang/outils/blob/master/src/url/stringfyQueryString.js
+[parseQueryString]:https://github.com/williamqian/tools/blob/master/src/url/parseQueryString.js
+[stringfyQueryString]:https://github.com/williamqian/tools/blob/master/src/url/stringfyQueryString.js
