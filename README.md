@@ -127,6 +127,7 @@ const OS = getOS()
 [scrollTo]:https://github.com/williamqian/tools/blob/master/src/dom/scrollTo.js
 [setScrollTop]:https://github.com/williamqian/tools/blob/master/src/dom/setScrollTop.js
 [windowResize]:https://github.com/williamqian/tools/blob/master/src/dom/windowResize.js
+[addWindowLoadFunc]:https://github.com/williamqian/tools/blob/master/src/dom/addWindowLoadFunc.js
 
 [debounce]:https://github.com/williamqian/tools/blob/master/src/function/debounce.js
 [throttle]:https://github.com/williamqian/tools/blob/master/src/function/throttle.js
