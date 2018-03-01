@@ -1,7 +1,5 @@
 # bftools
 [![npm](https://img.shields.io/npm/v/bftools.svg)](https://www.npmjs.com/package/bftools) 
-![Build Status](https://travis-ci.org/williamqian/bftools.svg?branch=master) 
-[![Coverage](https://coveralls.io/repos/github/williamqian/bftools/badge.svg?branch=master) 
 ![LICENSE MIT](https://img.shields.io/npm/l/bftools.svg)](https://www.npmjs.com/package/bftools) 
 
  
