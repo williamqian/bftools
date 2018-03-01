@@ -1,8 +1,8 @@
 {
-  "name": "outils",
-  "version": "1.2.1",
+  "name": "tools",
+  "version": "1.0.0",
   "description": "前端业务代码工具库",
-  "main": "min/outils.min.js",
+  "main": "min/tools.min.js",
   "scripts": {
     "build": "node script/build.js",
     "test": "karma start script/karma.conf.js"
@@ -16,7 +16,7 @@
     "tool",
     "common-util"
   ],
-  "author": "SlaneYang",
+  "author": "WilliamQian",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
