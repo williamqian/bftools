@@ -5,7 +5,7 @@
  */
 function addWindowLoadFunc(func)
 {
-    var oldFunc = window.onload;
+    let oldFunc = window.onload;
     if (typeof(window.onload) !== 'function')
     {
         window.onload = func;

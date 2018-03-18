@@ -84,8 +84,9 @@ const OS = getOS()
 #### &emsp;&emsp;[isEmptyObject][isEmptyObject]&emsp;&emsp;判断Object是否为空
 
 ### Random  
-#### &emsp;&emsp;[randomColor][randomColor] &emsp;&emsp;随机生成颜色
-#### &emsp;&emsp;[randomNum][randomNum]&emsp;&emsp;生成指定范围随机数 
+#### &emsp;&emsp;[getRandomColor][getRandomColor] &emsp;&emsp;随机生成颜色
+#### &emsp;&emsp;[getRandomNum][getRandomNum]&emsp;&emsp;生成指定范围随机数 
+#### &emsp;&emsp;[getRandomString][getRandomString]&emsp;&emsp;生成指定长度随机字符串 
 
 ### Regexp  
 #### &emsp;&emsp;[isEmail][isEmail]&emsp;&emsp;判断是否为邮箱地址 
@@ -108,6 +109,9 @@ const OS = getOS()
 ### Url
 #### &emsp;&emsp;[parseQueryString][parseQueryString]&emsp;&emsp;url参数转对象
 #### &emsp;&emsp;[stringfyQueryString][stringfyQueryString]&emsp;&emsp;对象序列化
+
+### Request
+#### &emsp;&emsp;[jsonp][jsonp]&emsp;&emsp;jsonp
 
 [arrayEqual]:https://github.com/williamqian/bftools/blob/master/src/array/arrayEqual.js
 
@@ -137,8 +141,9 @@ const OS = getOS()
 [deepClone]:https://github.com/williamqian/bftools/blob/master/src/object/deepClone.js
 [isEmptyObject]:https://github.com/williamqian/bftools/blob/master/src/object/isEmptyObject.js
 
-[randomColor]:https://github.com/williamqian/bftools/blob/master/src/random/randomColor.js
-[randomNum]:https://github.com/williamqian/bftools/blob/master/src/random/randomNum.js
+[getRandomColor]:https://github.com/williamqian/bftools/blob/master/src/random/getRandomColor.js
+[getRandomNum]:https://github.com/williamqian/bftools/blob/master/src/random/getRandomNum.js
+[getrandomString]:https://github.com/williamqian/bftools/blob/master/src/random/getrandomString.js
 
 [isEmail]:https://github.com/williamqian/bftools/blob/master/src/regexp/isEmail.js
 [isIdCard]:https://github.com/williamqian/bftools/blob/master/src/regexp/isIdCard.js
@@ -155,3 +160,5 @@ const OS = getOS()
 
 [parseQueryString]:https://github.com/williamqian/bftools/blob/master/src/url/parseQueryString.js
 [stringfyQueryString]:https://github.com/williamqian/bftools/blob/master/src/url/stringfyQueryString.js
+
+[jsonp]:https://github.com/williamqian/bftools/blob/master/src/request/jsonp.js

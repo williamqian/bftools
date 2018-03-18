@@ -5,8 +5,8 @@
  * @param  {Number} max 
  * @return {Number} 
  */
-function randomNum(min, max) {
-    return Math.floor(Math.random() * (max-min+1) )+ min;
+function getRandomNum(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-module.exports = randomNum;
+module.exports = getRandomNum;
