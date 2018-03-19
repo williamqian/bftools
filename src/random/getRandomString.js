@@ -20,8 +20,8 @@ function getRandomString(length, mode) {
             break;
     }
     let max = chars.length;
-    for (let i = 0; i < max; i++) {
-        resStr += chars[Math.floor(Math.random() * max)];
+    for (let i = 0; i < length; i++) {
+        resStr += chars.charAt(Math.floor(Math.random() * max));
     }
     return resStr;
 }
