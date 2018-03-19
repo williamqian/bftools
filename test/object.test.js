@@ -1,6 +1,6 @@
-describe('Object API:', function () {
-    describe('#deepClone()', function () {
-        it(`person deepEqual outils.deepClone(person) should return true`, function () {
+describe('Object API:', function() {
+    describe('#deepClone()', function() {
+        it(`person deepEqual bftools.deepClone(person) should return true`, function() {
             let person = {
                 name: "user",
                 settings: {
@@ -8,10 +8,10 @@ describe('Object API:', function () {
                     second: [1, 2, 3, 4, 3]
                 }
             }
-            assert.deepEqual(person, outils.deepClone(person))
+            assert.deepEqual(person, bftools.deepClone(person))
         });
 
-        it(`person === outils.deepClone(person) should return false`, function () {
+        it(`person === bftools.deepClone(person) should return false`, function() {
             let person = {
                 name: "user",
                 settings: {
@@ -19,23 +19,23 @@ describe('Object API:', function () {
                     second: [1, 2, 3, 4, 3]
                 }
             }
-            assert.notEqual(person, outils.deepClone(person))
+            assert.notEqual(person, bftools.deepClone(person))
         });
     });
 
-    describe('#isEmptyObject()', function () {
-        it(`outils.isEmptyObject({}) should return true`, function () {
-            assert(outils.deepClone({}))
+    describe('#isEmptyObject()', function() {
+        it(`bftools.isEmptyObject({}) should return true`, function() {
+            assert(bftools.deepClone({}))
         });
 
-        it(`outils.isEmptyObject({ one: 1 }) should return false`, function () {
-            assert.notEqual(outils.isEmptyObject({
+        it(`bftools.isEmptyObject({ one: 1 }) should return false`, function() {
+            assert.notEqual(bftools.isEmptyObject({
                 one: 1
             }))
         });
 
-        it(`outils.isEmptyObject([]) should return false`, function () {
-            assert.notEqual(outils.isEmptyObject([]))
+        it(`bftools.isEmptyObject([]) should return false`, function() {
+            assert.notEqual(bftools.isEmptyObject([]))
         });
     });
 })

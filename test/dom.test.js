@@ -1,42 +1,42 @@
-describe('Dom API:', function () {
-    describe('#getScrollTop()', function () {
+describe('Dom API:', function() {
+    describe('#getScrollTop()', function() {
         let $body = document.body,
             bodyHeight = getComputedStyle($body).getPropertyValue('height'),
             length = 20;
-        before(function () {
+        before(function() {
             $body.style.height = '10000px'
-            outils.setScrollTop(length)
+            bftools.setScrollTop(length)
         })
-        it(`outils.getScrollTop() should return true`, function () {
-            assert(outils.getScrollTop() === length)
+        it(`bftools.getScrollTop() should return true`, function() {
+            assert(bftools.getScrollTop() === length)
         })
-        after(function () {
-            outils.setScrollTop(0)
+        after(function() {
+            bftools.setScrollTop(0)
             $body.style.height = bodyHeight
         })
     });
 
-    describe('#setScrollTop()', function () {
+    describe('#setScrollTop()', function() {
         let $body = document.body,
             bodyHeight = getComputedStyle($body).getPropertyValue('height'),
             length = 20;
-        before(function () {
+        before(function() {
             $body.style.height = '10000px'
-            outils.setScrollTop(length)
+            bftools.setScrollTop(length)
         })
-        it(`outils.getScrollTop() should return true`, function () {
-            outils.setScrollTop(length)
-            assert(outils.getScrollTop() === length)
+        it(`bftools.getScrollTop() should return true`, function() {
+            bftools.setScrollTop(length)
+            assert(bftools.getScrollTop() === length)
         })
-        after(function () {
-            outils.setScrollTop(0)
+        after(function() {
+            bftools.setScrollTop(0)
             $body.style.height = bodyHeight
         })
     });
 
-    describe('#offset()', function () {
+    describe('#offset()', function() {
         let $ele = null
-        before(function () {
+        before(function() {
             let div = document.createElement('div')
             div.id = 'J_addClass'
             div.style.position = 'absolute'
@@ -45,55 +45,55 @@ describe('Dom API:', function () {
             document.body.appendChild(div)
             $ele = document.querySelector('#J_addClass')
         })
-        it(`outils.offset() should return true`, function () {
-            let offset = outils.offset($ele)
+        it(`bftools.offset() should return true`, function() {
+            let offset = bftools.offset($ele)
             assert(offset.left === 300 && offset.top === 200)
         })
-        after(function () {
+        after(function() {
             document.body.removeChild($ele)
         })
     });
 
-    describe('#scrollTo()', function () {
+    describe('#scrollTo()', function() {
         let $body = document.body,
             bodyHeight = getComputedStyle($body).getPropertyValue('height'),
             length = 20,
             y = 100,
             duration = 300;
-        before(function () {
+        before(function() {
             $body.style.height = '10000px'
         })
-        it(`outils.scrollTo() should return true`, function (done) {
-            outils.scrollTo(y, duration)
-            setTimeout(function () {
-                assert(outils.getScrollTop() === y)
+        it(`bftools.scrollTo() should return true`, function(done) {
+            bftools.scrollTo(y, duration)
+            setTimeout(function() {
+                assert(bftools.getScrollTop() === y)
                 done()
             }, duration + 200)
         })
-        after(function () {
-            outils.setScrollTop(0)
+        after(function() {
+            bftools.setScrollTop(0)
             $body.style.height = bodyHeight
         })
     });
 
 
-    describe('#windowResize()', function () {
+    describe('#windowResize()', function() {
         let innerHeight = window.innerHeight
-        it(`outils.windowResize(downCb) should return true`, function (done) {
-            outils.windowResize(function () {
+        it(`bftools.windowResize(downCb) should return true`, function(done) {
+            bftools.windowResize(function() {
                 // 键盘缩回回调
                 assert(window.innerHeight == innerHeight)
                 done()
-            }, function () {})
+            }, function() {})
             // 触发resize事件，模拟软键盘缩回
             window.dispatchEvent(new Event('resize'));
         })
     });
 
-    describe('#windowResize()', function () {
+    describe('#windowResize()', function() {
         let innerHeight = window.innerHeight
-        it(`outils.windowResize(upCb) should return true`, function (done) {
-            outils.windowResize(function () {}, function () {
+        it(`bftools.windowResize(upCb) should return true`, function(done) {
+            bftools.windowResize(function() {}, function() {
                 // 键盘弹起回调
                 assert(window.innerHeight === innerHeight - 200)
                 done()
@@ -103,7 +103,7 @@ describe('Dom API:', function () {
             // 触发resize事件
             window.dispatchEvent(new Event('resize'));
         })
-        after(function(){
+        after(function() {
             window.innerHeight = innerHeight
         })
     });

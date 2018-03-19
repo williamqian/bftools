@@ -1,13 +1,13 @@
-describe('Random API:', function () {
-    describe('#randomColor()', function () {
-        it(`/^#[0-9a-fA-F]$/.test(outils.randomColor()) should return true`, function () {
-            assert(/^#[0-9a-fA-F]{6}$/.test(outils.randomColor()))
+describe('Random API:', function() {
+    describe('#getRandomColor()', function() {
+        it(`/^#[0-9a-fA-F]$/.test(bftools.getRandomColor()) should return true`, function() {
+            assert(/^#[0-9a-fA-F]{6}$/.test(bftools.getRandomColor()))
         });
     });
 
-    describe('#randomNum()', function () {
-        it(`10 <= outils.randomNum(10, 1000) <= 100 should return true`, function () {
-            let num = outils.randomNum(10, 1000)
+    describe('#getRandomNum()', function() {
+        it(`10 <= bftools.getRandomNum(10, 1000) <= 100 should return true`, function() {
+            let num = bftools.getRandomNum(10, 1000)
             assert(num <= 1000 && num > 10)
         });
     });

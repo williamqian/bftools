@@ -1,52 +1,52 @@
-describe('Class API:', function () {
-    describe('#addClass()', function () {
+describe('Class API:', function() {
+    describe('#addClass()', function() {
         let $ele = null
-        before(function () {
+        before(function() {
             let div = document.createElement('div')
             div.id = 'J_addClass'
             document.body.appendChild(div)
             $ele = document.querySelector('#J_addClass')
         })
-        it(`outils.addClass($ele, 'test') should return true`, function () {
-            outils.addClass($ele, 'test')
-            assert(outils.hasClass($ele, 'test'))
+        it(`bftools.addClass($ele, 'test') should return true`, function() {
+            bftools.addClass($ele, 'test')
+            assert(bftools.hasClass($ele, 'test'))
         });
-        after(function () {
+        after(function() {
             document.body.removeChild($ele)
         })
     });
 
-    describe('#hasClass()', function () {
+    describe('#hasClass()', function() {
         let $ele = null
-        before(function () {
+        before(function() {
             let div = document.createElement('div')
             div.id = 'J_hasClass'
             document.body.appendChild(div)
             $ele = document.querySelector('#J_hasClass')
-            outils.addClass($ele, 'test')
+            bftools.addClass($ele, 'test')
         })
-        it(`outils.hasClass($ele, 'test') should return true`, function () {
-            assert(outils.hasClass($ele, 'test'))
+        it(`bftools.hasClass($ele, 'test') should return true`, function() {
+            assert(bftools.hasClass($ele, 'test'))
         });
-        after(function () {
+        after(function() {
             document.body.removeChild($ele)
         })
     });
 
-    describe('#removeClass()', function () {
+    describe('#removeClass()', function() {
         let $ele = null
-        before(function () {
+        before(function() {
             let div = document.createElement('div')
             div.id = 'J_removeClass'
             document.body.appendChild(div)
             $ele = document.querySelector('#J_removeClass')
-            outils.addClass($ele, 'test')
+            bftools.addClass($ele, 'test')
         })
-        it(`outils.removeClass($ele, 'test') should return false`, function () {
-            outils.removeClass($ele, 'test')
-            assert.notEqual(outils.hasClass($ele, 'test'))
+        it(`bftools.removeClass($ele, 'test') should return false`, function() {
+            bftools.removeClass($ele, 'test')
+            assert.notEqual(bftools.hasClass($ele, 'test'))
         });
-        after(function () {
+        after(function() {
             document.body.removeChild($ele)
         })
     });

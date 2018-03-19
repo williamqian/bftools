@@ -29,8 +29,8 @@ const getKeyName = require('./keycode/getKeyName');
 const deepClone = require('./object/deepClone');
 const isEmptyObject = require('./object/isEmptyObject');
 
-const randomColor = require('./random/getRandomColor');
-const randomNum = require('./random/getRandomNum');
+const getRandomColor = require('./random/getRandomColor');
+const getRandomNum = require('./random/getRandomNum');
 const getRandomString = require('./random/getRandomString');
 
 const isEmail = require('./regexp/isEmail');
