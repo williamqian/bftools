@@ -16,7 +16,7 @@ function getRandomString(length, mode) {
             chars = '1234567890';
             break;
         default:
-            chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
+            chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
             break;
     }
     let max = chars.length;

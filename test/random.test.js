@@ -11,4 +11,13 @@ describe('Random API:', function() {
             assert(num <= 1000 && num > 10)
         });
     });
+
+    describe('#getRandomString()', function() {
+        it(`/^[0-9a-fA-F]{16}$/.test(bftools.getRandomString()) should return true`, function() {
+            assert(/^[0-9a-fA-F]{16}$/.test(bftools.getRandomString()))
+        });
+        it(`/^[0-9]{4}$/.test(bftools.getRandomString(4,'number')) should return true`, function() {
+            assert(/^[0-9]{4}$/.test(bftools.getRandomString(4, 'number')))
+        });
+    });
 })

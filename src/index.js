@@ -82,7 +82,7 @@ module.exports = {
 
     getRandomColor,
     getRandomNum,
-    getRandomColor,
+    getRandomString,
 
     isEmail,
     isIdCard,
