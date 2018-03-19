@@ -39,7 +39,7 @@ module.exports = function(config) {
         // reporter options
         mochaReporter: {
             colors: {
-                success: 'blue',
+                success: 'green',
                 info: 'bgGreen',
                 warning: 'cyan',
                 error: 'bgRed'
@@ -54,7 +54,7 @@ module.exports = function(config) {
 
         // optionally, configure the reporter 
         coverageReporter: {
-            type: 'html',
+            type: 'lcov',
             dir: 'coverage/',
             subdir: '.'
             // Would output the results into: .'/coverage/'
