@@ -143,7 +143,7 @@ const OS = getOS()
 
 [getRandomColor]:https://github.com/williamqian/bftools/blob/master/src/random/getRandomColor.js
 [getRandomNum]:https://github.com/williamqian/bftools/blob/master/src/random/getRandomNum.js
-[getrandomString]:https://github.com/williamqian/bftools/blob/master/src/random/getrandomString.js
+[getRandomString]:https://github.com/williamqian/bftools/blob/master/src/random/getRandomString.js
 
 [isEmail]:https://github.com/williamqian/bftools/blob/master/src/regexp/isEmail.js
 [isIdCard]:https://github.com/williamqian/bftools/blob/master/src/regexp/isIdCard.js

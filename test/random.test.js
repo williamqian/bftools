@@ -18,8 +18,8 @@ describe('Random API:', function() {
             assert(/^[0-9a-zA-Z]{16}$/.test(bftools.getRandomString()));
 
         });
-        it(`/^[0-9]{4}$/.test(bftools.getRandomString(4,'number')) should return true`, function() {
-            assert(/^[0-9]{4}$/.test(bftools.getRandomString(4, 'number')))
+        it(`/^[0-9]{8}$/.test(bftools.getRandomString(8,'number')) should return true`, function() {
+            assert(/^[0-9]{8}$/.test(bftools.getRandomString(8, 'number')))
         });
     });
 })
