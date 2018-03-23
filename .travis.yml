@@ -1,21 +1,21 @@
 language: node_js
 node_js:
-  - "8"
+- '8'
 before_install:
 - sudo apt-get install google-chrome-stable
 install:
-  - npm install
+- npm install
 script:
-  - npm run test
+- npm run test
 after_success:
 - cat ./coverage/lcov.info | node_modules/.bin/coveralls --verbose
 - rm -rf ./coverage
 branches:
   only:
-    - master
+  - master
 before_deploy:
-  - npm run build
-  - rm -rf ./src ./test ./coverage ./script ./.babelrc
+- npm run build
+- rm -rf ./src ./test ./coverage ./script ./.babelrc
 deploy:
   provider: npm
   email: "$NPM_EMAIL"
