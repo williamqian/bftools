@@ -16,7 +16,7 @@ new Promise((resolve, reject) => {
     building.start()
     rm(path.resolve(rootPath, 'min', `${pkg.name}.min.js`), err => {
         if (err) throw (err)
-        webpack(config, function (err, stats) {
+        webpack(config, function(err, stats) {
             if (err) throw (err)
             building.stop()
             process.stdout.write(stats.toString({
@@ -38,7 +38,7 @@ new Promise((resolve, reject) => {
         if (err) throw (err)
         let folderList = fs.readdirSync(path.resolve(rootPath, 'src'))
         folderList.forEach((item, index) => {
-            copy(`src/${item}/*.js`, rootPath, function (err, files) {
+            copy(`src/${item}/*.js`, rootPath, function(err, files) {
                 if (err) throw err;
                 if (index === folderList.length - 1) {
                     console.log(chalk.cyan('  Copy complete.\n'))

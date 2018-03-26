@@ -1,6 +1,7 @@
 # files
 *.log
 *.zip
+*.yml
 .babelrc
 .DS_Store
 
