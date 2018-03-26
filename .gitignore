@@ -2,7 +2,7 @@
 *.log
 *.zip
 .DS_Store
-/.js
+/*.js
 
 # folders
 node_modules/*
@@ -11,3 +11,4 @@ coverage/*
 # Editor directories and files
 .vscode
 .idea
+
