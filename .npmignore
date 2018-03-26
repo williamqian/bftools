@@ -1,12 +1,17 @@
 # files
 *.log
 *.zip
+.babelrc
 .DS_Store
-/.js
+
 
 # folders
-node_modules/*
 coverage/*
+node_modules/*
+script/*
+src/*
+test/*
+
 
 # Editor directories and files
 .vscode
