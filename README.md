@@ -113,6 +113,10 @@ const OS = getOS()
 ### Request
 #### &emsp;&emsp;[jsonp][jsonp]&emsp;&emsp;jsonp
 
+### WeiXin
+#### &emsp;&emsp;[jssdk][jssdk]&emsp;&emsp;微信jssdk config注入以及分享接口调用
+#### &emsp;&emsp;[jsonpJssdk][jsonpJssdk]&emsp;&emsp;通过jsonp方式获取微信jssdk的config，并且初始化微信jssdk
+
 [arrayEqual]:https://github.com/williamqian/bftools/blob/master/src/array/arrayEqual.js
 
 [addClass]:https://github.com/williamqian/bftools/blob/master/src/class/addClass.js
@@ -162,3 +166,6 @@ const OS = getOS()
 [stringfyQueryString]:https://github.com/williamqian/bftools/blob/master/src/url/stringfyQueryString.js
 
 [jsonp]:https://github.com/williamqian/bftools/blob/master/src/request/jsonp.js
+
+[jssdk]:https://github.com/williamqian/bftools/blob/master/src/weixin/jssdk.js
+[jsonpJssdk]:https://github.com/williamqian/bftools/blob/master/src/weixin/jsonpJssdk.js

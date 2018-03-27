@@ -51,6 +51,9 @@ const stringfyQueryString = require('./url/stringfyQueryString');
 
 const jsonp = require('./request/jsonp');
 
+const jssdk = require('./weixin/jssdk');
+const jsonpJssdk = require('./weixin/jsonpJssdk');
+
 module.exports = {
     arrayEqual,
 
@@ -100,5 +103,8 @@ module.exports = {
     parseQueryString,
     stringfyQueryString,
 
-    jsonp
+    jsonp,
+
+    jssdk,
+    jsonpJssdk
 };

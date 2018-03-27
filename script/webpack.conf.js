@@ -13,6 +13,7 @@ const config = {
         library: `${pkg.name}`,
         libraryTarget: "umd"
     },
+    externals: { wx: 'window.wx' },
     module: {
         rules: [{
             test: /\.js$/,

@@ -108,5 +108,20 @@ describe('Dom API:', function() {
         })
     });
 
+    describe('#addWindowLoadFunc()', function() {
+        let a = 1;
+        it(`bftools.addWindowLoadFunc should return true`, function(done) {
+            window.onload = function() {
+                a++;
+            };
+            bftools.addWindowLoadFunc(function() {
+                a++;
+                assert(a == 3);
+                done()
+            });
+            window.dispatchEvent(new Event('load'));
+        });
+
+    });
 
 });
