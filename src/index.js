@@ -28,6 +28,7 @@ const getKeyName = require('./keycode/getKeyName');
 
 const deepClone = require('./object/deepClone');
 const isEmptyObject = require('./object/isEmptyObject');
+const extend = require('./object/extend');
 
 const getRandomColor = require('./random/getRandomColor');
 const getRandomNum = require('./random/getRandomNum');
@@ -82,6 +83,7 @@ module.exports = {
 
     deepClone,
     isEmptyObject,
+    extend,
 
     getRandomColor,
     getRandomNum,

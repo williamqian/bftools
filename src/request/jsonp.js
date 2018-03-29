@@ -1,5 +1,6 @@
 let stringfyQueryString = require('../url/stringfyQueryString');
 let getRandomString = require('../random/getRandomString');
+let extend = require('../object/extend');
 /**
  * 
  * @desc  jsonp跨域获取数据
@@ -15,7 +16,7 @@ function jsonp(argOptions) {
     let defaultOptions = {
         callback: 'callback',
     };
-    let options = Object.assign({}, defaultOptions, argOptions);
+    let options = extend({}, defaultOptions, argOptions);
     let url = options.url;
     let data = options.data;
 
@@ -30,7 +31,7 @@ function jsonp(argOptions) {
     data[options.callback] = callbackName;
 
     oScript.setAttribute('src', url + '?' + stringfyQueryString(data));
-    oBody.append(oScript);
+    oBody.appendChild(oScript);
 }
 
 module.exports = jsonp;

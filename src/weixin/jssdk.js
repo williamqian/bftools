@@ -1,3 +1,5 @@
+const wx = require('wx');
+let extend = require('../object/extend');
 /**
  * 
  * @desc 微信jssdk config注入以及分享接口调用
@@ -6,8 +8,6 @@
  * @param  {Array} apiList  
  * 
  */
-const wx = require('wx');
-
 function jssdk(config, shareInfo, apiList) {
     //判断有没有引入微信jssdk官方库
     if (typeof(wx) === 'undefined') {
@@ -20,7 +20,7 @@ function jssdk(config, shareInfo, apiList) {
         link: location.href,
         image: ''
     };
-    let finalShareInfo = Object.assign({}, defaultShareInfo, shareInfo);
+    let finalShareInfo = extend({}, defaultShareInfo, shareInfo);
     let defaultApiList = ['onMenuShareTimeline', 'onMenuShareAppMessage'];
     let finalApiList = defaultApiList;
     if (Array.isArray(apiList)) {
