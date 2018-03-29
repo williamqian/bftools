@@ -11,10 +11,3 @@ coverage/*
 # Editor directories and files
 .vscode
 .idea
-
-src/weixin/jsonpJssdk.js
-src/weixin/jsonpJssdk.js
-addClass.js
-src/weixin/jsonpJssdk.js
-src/weixin/jssdk.js
-src/request/jsonp.js
