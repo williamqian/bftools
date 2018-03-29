@@ -51,7 +51,7 @@ function jsonpJssdk(options) {
         url: finalOptions.url,
         data: {
             jssdk_url: finalOptions.data.jssdk_url,
-            appid: finalOptions.url
+            appid: finalOptions.appid
         },
         callback: options.callback,
         success: function(config) {
