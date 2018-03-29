@@ -36,8 +36,8 @@ webpack、RequireJS、SeaJS等
 const bftools = require('bftools')
 const OS = bftools.getOS()
 ```
-**注意**
-***如果您是通过webpack安装的bftools，并且报Module not found: Error: Can't resolve 'window.wx'，你还得设置webpack的extenarals，如下所示：***
+###注意！！！###
+**如果您是通过webpack安装的bftools，并且报Module not found: Error: Can't resolve 'window.wx'，你还得设置webpack的extenarals，如下所示：**
 ```
 externals: {
         wx: {
