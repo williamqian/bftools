@@ -39,12 +39,7 @@ const OS = bftools.getOS()
 **如果您是通过webpack安装的bftools，并且报`Module not found: Error: Can't resolve 'wx'`，你还得设置webpack的extenarals，如下所示：**
 ```
 externals: {
-    wx: {
-        commonjs: "wx",
-        commonjs2: "wx",
-        amd: "wx",
-        root: "window.wx"
-    }
+    wx: 'window.wx'
 }
 ```
 **推荐使用方法**  
