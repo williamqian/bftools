@@ -17,6 +17,7 @@ function jsonpJssdk(appid, url, shareInfo, apiList) {
             jssdk_url: location.href,
             appid: appid
         },
+        callback: 'callback',
         success: function(config) {
             jssdk(config, shareInfo, apiList);
         }
