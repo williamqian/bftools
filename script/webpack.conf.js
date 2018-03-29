@@ -19,7 +19,7 @@ const config = {
             commonjs: "wx",
             commonjs2: "wx",
             amd: "wx",
-            root: "window.wx"
+            root: "wx"
         }
     },
     module: {

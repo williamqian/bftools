@@ -18,7 +18,7 @@ function jssdk(config, shareInfo, apiList) {
         title: document.title,
         des: document.title,
         link: location.href,
-        image: document.querySelector('img').src
+        image: ''
     };
     let finalShareInfo = Object.assign({}, defaultShareInfo, shareInfo);
     let defaultApiList = ['onMenuShareTimeline', 'onMenuShareAppMessage'];

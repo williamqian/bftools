@@ -13,7 +13,7 @@ let getRandomString = require('../random/getRandomString');
  */
 function jsonp(argOptions) {
     let defaultOptions = {
-        callback: 'cb'
+        callback: 'callback',
     };
     let options = Object.assign({}, defaultOptions, argOptions);
     let url = options.url;
