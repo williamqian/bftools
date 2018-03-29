@@ -2,7 +2,7 @@
 *.log
 *.zip
 .DS_Store
-/*.js
+#/*.js
 
 # folders
 node_modules/*

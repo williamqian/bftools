@@ -30,7 +30,8 @@ new Promise((resolve, reject) => {
             console.log(chalk.cyan('  Build complete.\n'))
         })
     })
-}).then(() => {
+})
+/*.then(() => {
     // 替换模块文件
     let copying = ora('copying...')
     copying.start()
@@ -49,4 +50,4 @@ new Promise((resolve, reject) => {
     })
 }).catch((err) => {
     throw err
-})
+})*/

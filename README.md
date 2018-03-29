@@ -51,8 +51,8 @@ externals: {
 
 你真的不需要完整引入所有函数，所以只引入需要使用的方法即可。
 ``` javascript
-// 只引入部分方法('bftools/<方法名>')
-const getOS = require('bftools/getOS')
+// 只引入部分方法('bftools/src/<目录名>/<方法名>')
+const getOS = require('bftools/src/device/getOS')
 const OS = getOS()
 ```
 ## API文档
