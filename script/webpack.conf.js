@@ -13,7 +13,15 @@ const config = {
         library: `${pkg.name}`,
         libraryTarget: "umd"
     },
-    externals: { wx: 'window.wx' },
+
+    externals: {
+        wx: {
+            commonjs: "wx",
+            commonjs2: "wx",
+            amd: "wx",
+            root: "window.wx"
+        }
+    },
     module: {
         rules: [{
             test: /\.js$/,
@@ -22,7 +30,7 @@ const config = {
         }]
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin()
+        //new webpack.optimize.UglifyJsPlugin()
     ]
 }
 

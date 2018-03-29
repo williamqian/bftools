@@ -36,7 +36,18 @@ webpack、RequireJS、SeaJS等
 const bftools = require('bftools')
 const OS = bftools.getOS()
 ```
-
+**注意**
+***如果您是通过webpack安装的bftools，并且报Module not found: Error: Can't resolve 'window.wx'，你还得设置webpack的extenarals，如下所示：***
+```
+externals: {
+        wx: {
+            commonjs: "wx",
+            commonjs2: "wx",
+            amd: "wx",
+            root: "window.wx"
+        }
+    }
+```
 **推荐使用方法**  
 
 你真的不需要完整引入所有函数，所以只引入需要使用的方法即可。
@@ -115,7 +126,9 @@ const OS = getOS()
 
 ### WeiXin
 #### &emsp;&emsp;[jssdk][jssdk]&emsp;&emsp;微信jssdk config注入以及分享接口调用
+
 #### &emsp;&emsp;[jsonpJssdk][jsonpJssdk]&emsp;&emsp;通过jsonp方式获取微信jssdk的config，并且初始化微信jssdk
+
 
 [arrayEqual]:https://github.com/williamqian/bftools/blob/master/src/array/arrayEqual.js
 
