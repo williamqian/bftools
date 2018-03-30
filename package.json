@@ -2,7 +2,7 @@
   "name": "bftools",
   "version": "2.0.16",
   "description": "前端业务代码工具库",
-  "main": "min/bftools.min.js",
+  "main": "dist/bftools.min.js",
   "scripts": {
     "build": "node script/build.js",
     "test": "karma start script/karma.conf.js"

@@ -13,7 +13,7 @@
 
 ## 安装使用
 
-1. 直接下载`min`目录下的[bftools.min.js](https://github.com/williamqian/bftools/blob/master/min/bftools.min.js)使用，支持UMD通用模块规范  
+1. 直接下载`dist`目录下的[bftools.min.js](https://github.com/williamqian/bftools/blob/master/dist/bftools.min.js)使用，支持UMD通用模块规范  
 2. 使用npm安装
 
 ### 浏览器:
@@ -44,12 +44,12 @@ externals: {
 ```
 **推荐使用方法**  
 
-你真的不需要完整引入所有函数，所以只引入需要使用的方法即可。
-``` javascript
-// 只引入部分方法('bftools/src/<目录名>/<方法名>')
-const getOS = require('bftools/src/device/getOS')
-const OS = getOS()
-```
+;你真的不需要完整引入所有函数，所以只引入需要使用的方法即可。
+;``` javascript
+;// 只引入部分方法('bftools/src/<目录名>/<方法名>')
+;const getOS = require('bftools/src/device/getOS')
+;const OS = getOS()
+;```
 ## API文档
 
 ### Array  
@@ -87,6 +87,7 @@ const OS = getOS()
 ### Object  
 #### &emsp;&emsp;[deepClone][deepClone]&emsp;&emsp;深拷贝，支持常见类型
 #### &emsp;&emsp;[isEmptyObject][isEmptyObject]&emsp;&emsp;判断Object是否为空
+#### &emsp;&emsp;[extend][extend]&emsp;&emsp;对象继承
 
 ### Random  
 #### &emsp;&emsp;[getRandomColor][getRandomColor] &emsp;&emsp;随机生成颜色

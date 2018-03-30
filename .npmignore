@@ -4,13 +4,13 @@
 *.yml
 .babelrc
 .DS_Store
-src/**/index.js
+#src/**/index.js
 
 # folders
 coverage/*
 node_modules/*
 script/*
-#src/*
+src/*
 test/*
 
 

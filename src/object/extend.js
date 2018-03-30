@@ -1,23 +1,23 @@
 'use strict';
 
-var hasOwn = Object.prototype.hasOwnProperty;
-var toStr = Object.prototype.toString;
+let hasOwn = Object.prototype.hasOwnProperty;
+let toStr = Object.prototype.toString;
 
-var isArray = function isArray(arr) {
+/*let isArray = function isArray(arr) {
     if (typeof Array.isArray === 'function') {
         return Array.isArray(arr);
     }
 
     return toStr.call(arr) === '[object Array]';
-};
+};*/
 
-var isPlainObject = function isPlainObject(obj) {
+let isPlainObject = function isPlainObject(obj) {
     if (!obj || toStr.call(obj) !== '[object Object]') {
         return false;
     }
 
-    var hasOwnConstructor = hasOwn.call(obj, 'constructor');
-    var hasIsPrototypeOf = obj.constructor && obj.constructor.prototype && hasOwn.call(obj.constructor.prototype, 'isPrototypeOf');
+    let hasOwnConstructor = hasOwn.call(obj, 'constructor');
+    let hasIsPrototypeOf = obj.constructor && obj.constructor.prototype && hasOwn.call(obj.constructor.prototype, 'isPrototypeOf');
     // Not own constructor property must be Object
     if (obj.constructor && !hasOwnConstructor && !hasIsPrototypeOf) {
         return false;
@@ -25,18 +25,18 @@ var isPlainObject = function isPlainObject(obj) {
 
     // Own properties are enumerated firstly, so to speed up,
     // if last one is own, then all properties are own.
-    var key;
+    let key;
     for (key in obj) { /**/ }
 
     return typeof key === 'undefined' || hasOwn.call(obj, key);
 };
 
 function extend() {
-    var options, name, src, copy, copyIsArray, clone;
-    var target = arguments[0];
-    var i = 1;
-    var length = arguments.length;
-    var deep = false;
+    let options, name, src, copy, copyIsArray, clone;
+    let target = arguments[0];
+    let i = 1;
+    let length = arguments.length;
+    let deep = false;
 
     // Handle a deep copy situation
     if (typeof target === 'boolean') {
@@ -61,10 +61,10 @@ function extend() {
                 // Prevent never-ending loop
                 if (target !== copy) {
                     // Recurse if we're merging plain objects or arrays
-                    if (deep && copy && (isPlainObject(copy) || (copyIsArray = isArray(copy)))) {
+                    if (deep && copy && (isPlainObject(copy) || (copyIsArray = Array.isArray(copy)))) {
                         if (copyIsArray) {
                             copyIsArray = false;
-                            clone = src && isArray(src) ? src : [];
+                            clone = src && Array.isArray(src) ? src : [];
                         } else {
                             clone = src && isPlainObject(src) ? src : {};
                         }
