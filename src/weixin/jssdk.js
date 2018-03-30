@@ -8,7 +8,7 @@ let extend = require('../object/extend');
  * @param  {Array} apiList  
  * 
  */
-function jssdk(config, shareInfo, apiList) {
+function jssdk(config, shareInfo, success, error, apiList) {
     //判断有没有引入微信jssdk官方库
     if (typeof(wx) === 'undefined') {
         console.error('lack of http://res.wx.qq.com/open/js/jweixin-*.*.*.js ');
@@ -60,8 +60,15 @@ function jssdk(config, shareInfo, apiList) {
                 // 用户取消分享后执行的回调函数
             }
         });
+        if (typeof(success) === 'function') {
+            success();
+        }
     });
-    wx.error(function(res) {});
+    wx.error(function(res) {
+        if (typeof(error) === 'function') {
+            error();
+        }
+    });
 }
 
 

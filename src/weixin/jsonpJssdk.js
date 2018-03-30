@@ -21,7 +21,7 @@ let extend = require('../object/extend');
  *    },
  *    apiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'], //可选， 要使用的jssdk接口
  *    success: function() {}, //可选，wx.ready回调
- *    error: function() {}, //可选，wx.error回调*
+ *    error: function(res) {}, //可选，wx.error回调*
  *}
  *
  **/
@@ -44,7 +44,7 @@ function jsonpJssdk(options) {
         },
         apiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'], //可选， 要使用的jssdk接口
         success: function() {}, //可选，wx.ready回调
-        error: function() {}, //可选，wx.error回调
+        error: function(res) {}, //可选，wx.error回调
     };
     let finalOptions = extend({}, defaultOptions, options);
     jsonp({
@@ -56,7 +56,7 @@ function jsonpJssdk(options) {
         callback: options.callback,
         success: function(config) {
             config.debug = finalOptions.isDebug;
-            jssdk(config, finalOptions.shareInfo, finalOptions.apiList);
+            jssdk(config, finalOptions.shareInfo, finalOptions.success, finalOptions.error, finalOptions.apiList);
         }
     });
 }
