@@ -68,6 +68,8 @@ externals: {
 #### &emsp;&emsp;[setScrollTop][setScrollTop]&emsp;&emsp;设置滚动条距顶部的距离
 #### &emsp;&emsp;[windowResize][windowResize]&emsp;&emsp;H5软键盘缩回、弹起回调
 #### &emsp;&emsp;[addWindowLoadFunc][addWindowLoadFunc]&emsp;&emsp;添加window onload后需要执行的函数
+#### &emsp;&emsp;[isScreenHorizontal][isScreenHorizontal]&emsp;&emsp;判断是否处于横屏状态
+#### &emsp;&emsp;[signBoard][signBoard]&emsp;&emsp;新建一个写字板
 
 ### Function  
 #### &emsp;&emsp;[debounce][debounce]&emsp;&emsp;函数防抖   
@@ -136,6 +138,8 @@ externals: {
 [setScrollTop]:https://github.com/williamqian/bftools/blob/master/src/dom/setScrollTop.js
 [windowResize]:https://github.com/williamqian/bftools/blob/master/src/dom/windowResize.js
 [addWindowLoadFunc]:https://github.com/williamqian/bftools/blob/master/src/dom/addWindowLoadFunc.js
+[isScreenHorizontal]:https://github.com/williamqian/bftools/blob/master/src/dom/isScreenHorizontal.js
+[signBoard]:https://github.com/williamqian/bftools/blob/master/src/dom/signBoard.js
 
 [debounce]:https://github.com/williamqian/bftools/blob/master/src/function/debounce.js
 [throttle]:https://github.com/williamqian/bftools/blob/master/src/function/throttle.js
@@ -144,6 +148,7 @@ externals: {
 
 [deepClone]:https://github.com/williamqian/bftools/blob/master/src/object/deepClone.js
 [isEmptyObject]:https://github.com/williamqian/bftools/blob/master/src/object/isEmptyObject.js
+[extend]:https://github.com/williamqian/bftools/blob/master/src/object/extend.js
 
 [getRandomColor]:https://github.com/williamqian/bftools/blob/master/src/random/getRandomColor.js
 [getRandomNum]:https://github.com/williamqian/bftools/blob/master/src/random/getRandomNum.js

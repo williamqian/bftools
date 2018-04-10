@@ -123,5 +123,20 @@ describe('Dom API:', function() {
         });
 
     });
+    describe('#isScreenHorizontal()', function() {
+        it(`bftools.isScreenHorizontal should return true`, function() {
+            let bool = true;
+            if (typeof(window.orientation) != 'undefined') {
+                if (window.orientation != 90 && window.orientation != -90) {
+                    bool = false;
+                }
+            } else {
+                if (window.innerWidth < window.innerHeight) {
+                    bool = false;
+                }
+            }
+            assert(bftools.isScreenHorizontal() === bool);
+        });
 
+    });
 });

@@ -1,9 +1,9 @@
-const webpack = require('webpack')
-const path = require('path')
+const webpack = require('webpack');
+const path = require('path');
 //const fs = require('fs')
-const pkg = require('../package.json')
+const pkg = require('../package.json');
 
-const rootPath = path.resolve(__dirname, '../')
+const rootPath = path.resolve(__dirname, '../');
 const srcPath = path.resolve(rootPath, 'src');
 
 /*
@@ -51,7 +51,7 @@ const config = {
         }]
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin()
+        //new webpack.optimize.UglifyJsPlugin(),
     ]
 }
 
