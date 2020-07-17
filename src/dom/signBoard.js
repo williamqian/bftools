@@ -49,15 +49,18 @@ let offset = require('../dom/offset');
  *
  **/
 
-class signBoard {
-    constructor(options) {
+class signBoard
+{
+    constructor(options)
+    {
         let defaultOptions = {
             container_id: 'my_container',
             line_width: 8,
             color: '#000000',
             force_horizontal: false
         };
-        let finalOptions = extend({}, defaultOptions, options);
+        let finalOptions = extend(
+        {}, defaultOptions, options);
         this.container = document.getElementById(finalOptions.container_id);
         this.canvas = document.createElement('canvas');
         this.container.appendChild(this.canvas);
@@ -67,31 +70,40 @@ class signBoard {
         this.force_horizontal = finalOptions.force_horizontal;
         this.strokeCount = 0;
         this.setSize();
-        window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", () => { this.setSize() }, false);
+        window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", () =>
+        {
+            this.setSize()
+        }, false);
         this.initEvents();
     }
 
     //是否需要旋转
-    get isNeedRotate() {
+    get isNeedRotate()
+    {
         let bool = false;
         let isHorizontal = isScreenHorizontal();
-        if (this.force_horizontal && !isHorizontal) {
+        if (this.force_horizontal && !isHorizontal)
+        {
             bool = true;
         }
         return bool;
     }
     //获取base64的png，可直接用于img src
-    get png() {
+    get png()
+    {
         return this.canvas.toDataURL("image/png");
     }
     //获取base64的jpeg，可直接用于img src
-    get jpg() {
+    get jpg()
+    {
         return this.canvas.toDataURL("image/jpeg");
     }
-    setSize() {
+    setSize()
+    {
         let wW = window.innerWidth;
         let wH = window.innerHeight;
-        if (this.isNeedRotate) {
+        if (this.isNeedRotate)
+        {
             document.body.style.width = `${wH}px`;
             document.body.style.height = `${wW}px`;
             document.body.style.transformOrigin = 'left bottom';
@@ -99,7 +111,9 @@ class signBoard {
             this.canvas.setAttribute("width", `${this.container.clientWidth}px`);
             this.canvas.setAttribute("height", `${this.container.clientHeight}px`);
 
-        } else {
+        }
+        else
+        {
             document.body.style.width = `${wW}px`;
             document.body.style.height = `${wH}px`;
             document.body.style.transformOrigin = 'center center';
@@ -109,7 +123,8 @@ class signBoard {
 
         }
     }
-    initEvents() {
+    initEvents()
+    {
         let touchStartY = {
             y0: 0,
             y1: 0
@@ -120,26 +135,31 @@ class signBoard {
         };
         let isMouseDown = false;
         //移动端事件初始化
-        let touchstartFunc = (e) => {
+        let touchstartFunc = (e) =>
+        {
             e.stopPropagation();
             e.preventDefault();
             this.context.beginPath();
             this.context.lineWidth = this.line_width;
             this.context.strokeStyle = this.color;
-            if (e.touches.length > 1) {
+            if (e.touches.length > 1)
+            {
                 touchStartY.y0 = e.touches[0].clientY;
                 touchStartY.y1 = e.touches[1].clientY;
                 touchStartX.x0 = e.touches[0].clientX;
                 touchStartX.x1 = e.touches[1].clientX;
             }
         };
-        let touchmoveFunc = (e) => {
+        let touchmoveFunc = (e) =>
+        {
             e.stopPropagation();
             e.preventDefault();
-            if (e.touches.length == 1) {
+            if (e.touches.length == 1)
+            {
                 let touchX = e.touches[0].clientX;
                 let touchY = e.touches[0].clientY;
-                if (this.isNeedRotate) {
+                if (this.isNeedRotate)
+                {
                     let temp = touchY;
                     touchY = window.innerWidth - touchX; //parseInt(this.canvas.getAttribute("height")) - touchX;
                     touchX = temp;
@@ -148,18 +168,22 @@ class signBoard {
                 this.context.lineTo(touchX - offset(this.canvas).left, touchY - offset(this.canvas).top);
                 this.context.stroke();
                 this.strokeCount++;
-            } else {
+            }
+            else
+            {
                 let cur_y_0 = e.touches[0].clientY;
                 let cur_y_1 = e.touches[1].clientY;
                 let cur_x_0 = e.touches[0].clientX;
                 let cur_x_1 = e.touches[1].clientX;
-                if ((cur_y_0 < (touchStartY.y0 - 30) && cur_y_1 < (touchStartY.y1 - 30) && !this.isNeedRotate) || (cur_x_0 > (touchStartX.x0 + 30) && cur_x_1 > (touchStartX.x1 + 30) && this.isNeedRotate)) {
+                if ((cur_y_0 < (touchStartY.y0 - 30) && cur_y_1 < (touchStartY.y1 - 30) && !this.isNeedRotate) || (cur_x_0 > (touchStartX.x0 + 30) && cur_x_1 > (touchStartX.x1 + 30) && this.isNeedRotate))
+                {
                     console.log('触发双指上滑事件');
                 }
 
             }
         };
-        let touchendFunc = (e) => {
+        let touchendFunc = (e) =>
+        {
             e.stopPropagation();
             this.context.closePath();
         };
@@ -171,7 +195,8 @@ class signBoard {
         this.canvas.addEventListener('touchend', touchendFunc);
 
         //pc端事件初始化
-        let mousedownFunc = (e) => {
+        let mousedownFunc = (e) =>
+        {
             e.stopPropagation();
             e.preventDefault();
             this.context.beginPath();
@@ -179,15 +204,18 @@ class signBoard {
             this.context.strokeStyle = this.color;
             isMouseDown = true;
         };
-        let mousemoveFunc = (e) => {
+        let mousemoveFunc = (e) =>
+        {
             e.stopPropagation();
             e.preventDefault();
             e = e || window.event;
-            if (isMouseDown) {
+            if (isMouseDown)
+            {
                 let x = e.clientX;
                 let y = e.clientY;
 
-                if (this.isNeedRotate) {
+                if (this.isNeedRotate)
+                {
                     let temp = y;
                     y = window.innerWidth - x; //parseInt(this.canvas.getAttribute("height")) - x;
                     x = temp;
@@ -198,7 +226,8 @@ class signBoard {
                 this.strokeCount++;
             }
         };
-        let mouseupFunc = (e) => {
+        let mouseupFunc = (e) =>
+        {
             e.stopPropagation();
             e.preventDefault();
             this.context.closePath();
@@ -210,11 +239,13 @@ class signBoard {
         //document.addEventListener('mouseup', mouseupFunc);
         this.canvas.addEventListener('mouseup', mouseupFunc);
     }
-    reset(options) {
+    reset(options)
+    {
         this.line_width = options.line_width;
         this.color = options.color;
     }
-    clear() {
+    clear()
+    {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.strokeCount = 0;
     }
